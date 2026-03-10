@@ -1,6 +1,7 @@
-/* Import Google Fonts */
+/* Import Google Fonts - Montserrat for body, Playfair for titles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@600;800&display=swap');
 
+/* 1. GLOBAL RESET & SPACING */
 * {
     margin: 0;
     padding: 0;
@@ -8,33 +9,56 @@
 }
 
 body {
-    background-color: #fdfdfb;
-    color: #444;
+    background-color: #fdfdfb; /* Very light off-white to reduce eye strain */
+    color: #444; /* Dark grey instead of pure black for better readability */
     font-family: 'Montserrat', sans-serif;
-    line-height: 2.0; /* Extra spacing for readability */
+    line-height: 1.8; /* Increased line height for "breathable" text */
+    -webkit-font-smoothing: antialiased;
 }
 
-/* --- HEADER & HERO --- */
+/* 2. HEADER & NAVIGATION */
 header {
-    background: #5d0016;
+    background: #5d0016; /* Heritage Maroon */
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 8%;
+    padding: 30px 8%; /* More vertical space in header */
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
 }
 
+.logo img {
+    height: 55px;
+}
+
+nav a {
+    color: #f4eee1;
+    text-decoration: none;
+    margin-left: 40px; /* Wider gap between links */
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spread out letters for a cleaner look */
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4af37;
+    letter-spacing: 3px; /* Subtle expansion effect */
+}
+
+/* 3. HERO SECTION */
 .hero {
-    height: 60vh;
+    position: relative;
+    width: 100%;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 60px; /* Space after hero */
 }
 
 .hero img {
@@ -42,7 +66,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%);
+    filter: brightness(45%);
 }
 
 .hero-text {
@@ -50,89 +74,130 @@ header {
     z-index: 2;
     color: white;
     text-align: center;
+    padding: 40px;
+    max-width: 900px;
 }
 
-/* --- THE 2-COLUMN GRID SYSTEM --- */
-.services-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Exactly 2 pictures per row */
-    gap: 60px; /* Large space between items */
-    padding: 80px 10%;
+.hero-text h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* 4. SECTION WRAPPERS */
+section {
+    padding: 100px 10%; /* Very large vertical padding for breathing room */
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centers the content on large screens */
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px; /* Big gap under headings */
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #d4af37;
+    margin: 15px auto 0;
+}
+
+/* 5. NEW GRID DESIGN (Services & Cards) */
+.services-container, .services-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px; /* Huge gap between cards */
+    margin-top: 60px;
 }
 
 .service-card {
     background: white;
-    padding-bottom: 40px;
-    border-radius: 8px;
+    border-radius: 4px; /* Sharper, more modern corners */
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-    transition: transform 0.4s ease;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding-bottom: 30px;
     border: 1px solid #f0f0f0;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.07);
 }
 
 .service-card img {
     width: 100%;
-    height: 350px; /* Taller images for 2-column layout */
+    height: 280px;
     object-fit: cover;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-.service-card h2 {
-    font-family: 'Playfair Display', serif;
+.service-card h3, .service-card h2 {
+    font-size: 1.6rem;
+    margin: 20px 25px 15px;
     color: #5d0016;
-    margin: 0 30px 20px 30px;
-    font-size: 2rem;
 }
 
 .service-card p {
-    padding: 0 30px;
-    font-size: 1.05rem;
-    color: #555;
-    letter-spacing: 0.5px;
+    padding: 0 25px;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.9;
 }
 
-/* --- SPECIAL EXPLANATION SECTIONS --- */
-.cultural-info {
-    padding: 100px 15%;
-    background-color: #f9f6f0;
-    text-align: center;
+/* 6. GALLERY MASONRY-STYLE GRID */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding-top: 40px;
 }
 
-.info-block {
-    margin-bottom: 80px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.gallery-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: 0.6s ease;
+    filter: saturate(0.8);
 }
 
-.info-block h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #5d0016;
-    margin-bottom: 25px;
+.gallery-grid img:hover {
+    filter: saturate(1.2);
+    transform: scale(1.03);
 }
 
-.info-block p {
-    font-size: 1.1rem;
-    color: #444;
-}
-
+/* 7. FOOTER */
 footer {
     background: #1a1a1a;
-    color: white;
+    color: #999;
     text-align: center;
-    padding: 60px;
+    padding: 80px 20px;
+    margin-top: 100px;
+    border-top: 1px solid #eee;
 }
 
-/* Mobile: Switch to 1 column so it's not too cramped */
-@media (max-width: 900px) {
-    .services-container {
-        grid-template-columns: 1fr;
-    }
+footer p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 8. MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+    header { padding: 20px 5%; }
+    nav a { margin-left: 15px; font-size: 0.7rem; }
+    .hero-text h1 { font-size: 2.5rem; }
+    section { padding: 60px 5%; }
 }
