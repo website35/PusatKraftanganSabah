@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Company Name</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Company Logo</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Welcome to Our Company</h1>
+        <p>We provide professional services to help your business grow.</p>
+        <button>Learn More</button>
+    </div>
+
+</section>
+
+
+<section class="home-about">
+
+<h2>About Our Company</h2>
+
+<p>
+We are a professional company dedicated to delivering high quality
+services for our clients. Our team focuses on reliability,
+innovation and customer satisfaction.
+</p>
+
+</section>
+
+
+<section class="home-services">
+
+<h2>Our Services</h2>
+
+<div class="service-container">
+
+<div class="service-box">
+<h3>Service One</h3>
+<p>Professional solutions for your business needs.</p>
+</div>
+
+<div class="service-box">
+<h3>Service Two</h3>
+<p>We provide reliable and efficient services.</p>
+</div>
+
+<div class="service-box">
+<h3>Service Three</h3>
+<p>Helping companies grow and succeed.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Company Name. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
