@@ -184,6 +184,7 @@ text-align:center;
 .services h1{
 color:#800020;
 margin-bottom:40px;
+font-size:36px;
 }
 
 .services-container{
@@ -199,6 +200,11 @@ background:white;
 border-radius:8px;
 overflow:hidden;
 box-shadow:0 5px 12px rgba(0,0,0,0.1);
+transition:transform 0.3s ease;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
 }
 
 .service-card img{
@@ -218,6 +224,32 @@ font-size:14px;
 }
 
 
+/* CULTURAL INFO SECTION */
+
+.cultural-info{
+padding:80px 120px;
+background:#faf7ed;
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.info-block{
+background:white;
+padding:30px;
+width:300px;
+border-radius:6px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.info-block h2{
+color:#800020;
+margin-bottom:15px;
+}
+
+
 /* GALLERY PAGE */
 
 .gallery{
@@ -228,6 +260,7 @@ text-align:center;
 .gallery h1{
 color:#800020;
 margin-bottom:40px;
+font-size:36px;
 }
 
 .gallery-grid{
@@ -242,6 +275,11 @@ height:250px;
 object-fit:cover;
 border-radius:6px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:transform 0.3s ease;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
 }
 
 
@@ -255,6 +293,7 @@ text-align:center;
 .contact h1{
 color:#800020;
 margin-bottom:25px;
+font-size:36px;
 }
 
 .contact p{
