@@ -2,44 +2,55 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Company Name</title>
+<title>Pusat Kraftangan Sabah</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-    <div class="logo">Company Logo</div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<div class="logo">
+<img src="images/logo.webp" alt="PKS Logo">
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</nav>
+
 </header>
 
 
 <section class="hero">
 
-    <div class="hero-text">
-        <h1>Welcome to Our Company</h1>
-        <p>We provide professional services to help your business grow.</p>
-        <button>Learn More</button>
-    </div>
+<img src="images/hero.jpg.png" alt="Pusat Kraftangan Sabah">
+
+<div class="hero-text">
+<h1>Pusat Kraftangan Sabah</h1>
+
+<p>
+To foster cultural diversity through craft-making and skills training,
+preserving heritage while creating sustainable livelihoods.
+</p>
+
+</div>
 
 </section>
 
 
 <section class="home-about">
 
-<h2>About Our Company</h2>
+<h2>About Us</h2>
 
 <p>
-We are a professional company dedicated to delivering high quality
-services for our clients. Our team focuses on reliability,
-innovation and customer satisfaction.
+Pusat Kraftangan Sabah is dedicated to preserving the rich cultural
+heritage of Sabah through traditional and modern handicrafts.
+The centre supports artisans, promotes creativity, and encourages
+cultural appreciation through craft-making activities.
 </p>
 
 </section>
@@ -49,21 +60,21 @@ innovation and customer satisfaction.
 
 <h2>Our Services</h2>
 
-<div class="service-container">
+<div class="services-preview">
 
-<div class="service-box">
-<h3>Service One</h3>
-<p>Professional solutions for your business needs.</p>
+<div>
+<h3>Handicraft Production</h3>
+<p>Production of traditional crafts including batik, rattan and bamboo products.</p>
 </div>
 
-<div class="service-box">
-<h3>Service Two</h3>
-<p>We provide reliable and efficient services.</p>
+<div>
+<h3>Training</h3>
+<p>Workshops and training sessions for visitors and communities.</p>
 </div>
 
-<div class="service-box">
-<h3>Service Three</h3>
-<p>Helping companies grow and succeed.</p>
+<div>
+<h3>Cultural Preservation</h3>
+<p>Exhibitions and galleries showcasing Sabah's cultural heritage.</p>
 </div>
 
 </div>
@@ -73,7 +84,7 @@ innovation and customer satisfaction.
 
 <footer>
 
-<p>© 2026 Company Name. All Rights Reserved.</p>
+<p>© 2026 Pusat Kraftangan Sabah</p>
 
 </footer>
 
