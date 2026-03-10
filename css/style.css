@@ -1,176 +1,208 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+/* Import Google Fonts for a premium look */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@700&display=swap');
+
+/* 1. RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background:#F5F5DC;
-color:#333;
+body {
+    background: #fdfcf8; /* Creamy background for a craft feel */
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
 }
 
-/* HEADER */
-
-header{
-background:#800020;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Elegant serif for headings */
+    color: #5d0016; /* Heritage Maroon */
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-weight:bold;
+/* 2. HEADER & NAVIGATION */
+header {
+    background: #5d0016;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-nav a:hover{
-text-decoration:underline;
+.logo img {
+    height: 60px;
+    transition: 0.3s;
 }
 
-.logo img{
-height:50px;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-/* HERO */
-
-.hero{
-position:relative;
-width:100%;
-height:500px;
-overflow:hidden;
+nav a:hover {
+    color: #d4af37; /* Golden Ochre on hover */
 }
 
-.hero img{
-width:100%;
-height:500px;
-object-fit:cover;
+/* 3. HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%, -50%);
-color:white;
-background:rgba(0,0,0,0.4);
-padding:20px 40px;
-text-align:center;
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%); /* Dims image so text is easy to read */
 }
 
-/* HOME */
-
-.home-about{
-padding:60px;
-text-align:center;
+.hero-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
 }
 
-.home-services{
-padding:60px;
-background:#faf7ed;
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 15px;
 }
 
-.services-preview{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:30px;
+/* 4. SECTIONS (General) */
+section {
+    padding: 80px 10%;
+    text-align: center;
 }
 
-/* ABOUT */
-
-.about{
-padding:60px;
-text-align:center;
+/* 5. SERVICES (Cards) */
+.home-services {
+    background: #f4eee1;
 }
 
-.about-images{
-display:flex;
-justify-content:center;
-gap:20px;
-padding:40px;
+.services-container, .services-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.about-images img{
-width:300px;
-height:200px;
-object-fit:cover;
+.service-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* SERVICES */
-
-.services{
-padding:60px;
-text-align:center;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-.services-container{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
-.service-card{
-width:300px;
-background:white;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-border-radius:8px;
-overflow:hidden;
+.service-card h2 {
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
 }
 
-.service-card img{
-width:100%;
-height:200px;
-object-fit:cover;
+.service-card p {
+    padding: 0 20px 30px;
+    color: #666;
+    font-size: 0.95rem;
 }
 
-.service-card h2{
-margin:15px 0;
-color:#800020;
+/* 6. ABOUT IMAGES */
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.service-card p{
-padding:0 20px 20px 20px;
+.about-images img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* GALLERY */
-
-.gallery{
-padding:60px;
-text-align:center;
+/* 7. GALLERY GRID */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:30px;
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.4s;
+    filter: grayscale(20%);
 }
 
-.gallery-grid img{
-width:100%;
-height:250px;
-object-fit:cover;
+.gallery-grid img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
 }
 
-/* CONTACT */
-
-.contact{
-padding:60px;
-text-align:center;
+/* 8. FOOTER */
+footer {
+    background: #2a000a; /* Darker version of maroon */
+    color: #d4af37;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
 }
 
-/* FOOTER */
+footer p {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
 
-footer{
-background:#800020;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
+/* 9. RESPONSIVE (For Mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 0.8rem;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
 }
