@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>About Us</title>
+<title>About - Pusat Kraftangan Sabah</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-<div class="logo">Company Logo</div>
+
+<div class="logo">
+<img src="images/logo.webp">
+</div>
 
 <nav>
 <a href="index.html">Home</a>
@@ -17,27 +20,47 @@
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
 </nav>
+
 </header>
 
 
-<section class="home-about">
+<section class="about">
 
-<h2>About Our Company</h2>
+<h1>About Pusat Kraftangan Sabah</h1>
 
 <p>
-Our company was established to provide reliable and professional
-services to businesses and individuals.
+To foster cultural diversity through craft-making and skills training,
+preserving heritage while creating sustainable livelihoods.
 </p>
 
 <p>
-We focus on quality, trust and long term relationships with clients.
+PKS features a two-storey building with the ground floor dedicated to
+exhibitions and retail of handicraft products including textiles,
+batik, rattan, bamboo, ceramics and glassware.
+</p>
+
+<p>
+Visitors can explore the Textile Gallery, Handicraft Gallery and
+Digital Gallery while observing artisans at work and participating
+in hands-on workshops such as batik painting and weaving.
 </p>
 
 </section>
 
 
+<section class="about-images">
+
+<img src="images/about1.jpg">
+<img src="images/about2.jpg">
+<img src="images/about3.jpg">
+
+</section>
+
+
 <footer>
-<p>© 2026 Company Name</p>
+
+<p>© 2026 Pusat Kraftangan Sabah</p>
+
 </footer>
 
 </body>
