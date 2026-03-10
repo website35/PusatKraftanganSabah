@@ -1,0 +1,110 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+
+body{
+background:#F5F5DC;
+color:#333;
+}
+
+
+/* HEADER */
+
+header{
+background:#800020;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+
+/* HERO */
+
+.hero{
+height:400px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#faf7ed;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero button{
+margin-top:15px;
+padding:10px 20px;
+background:#800020;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.hero button:hover{
+background:#5a0016;
+}
+
+
+/* HOME ABOUT */
+
+.home-about{
+padding:60px;
+text-align:center;
+}
+
+.home-about h2{
+margin-bottom:20px;
+}
+
+
+/* SERVICES */
+
+.home-services{
+padding:60px;
+background:#faf7ed;
+}
+
+.service-container{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+}
+
+.service-box{
+background:white;
+padding:30px;
+width:250px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+
+/* FOOTER */
+
+footer{
+background:#800020;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
