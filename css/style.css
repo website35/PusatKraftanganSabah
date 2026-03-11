@@ -1,228 +1,245 @@
-/* --- 1. FONTS & THEME --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&display=swap');
+/* --- 1. PREMIUM TYPOGRAPHY & THEME --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&display=swap');
 
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+    --deep-brown: #3d2b1f;   /* Rich Espresso */
+    --gold-text: #e5cc7d;    /* High-Contrast Gold for Title */
+    --accent-gold: #b08d57;  /* Muted Gold for Borders */
+    --cream-bg: #fdfaf5;     /* Antique Paper Cream */
+    --white: #ffffff;
 }
 
-/* BODY - Centered & Earthy */
-body{
+/* --- 2. GLOBAL RESET & CENTERING --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cream-bg);
+    color: var(--deep-brown);
     font-family: 'Poppins', sans-serif;
-    background:#fdfaf5; /* Clean Antique Cream */
-    color:#3e2723;      /* Deep Espresso Brown */
-    line-height:1.9;
-    text-align: center; /* FORCES ALL TEXT TO CENTER */
+    line-height: 1.8;
+    text-align: center; /* FORCES ALL CONTENT TO CENTER */
 }
 
-/* HEADER - Formal Slim Design */
-header{
-    background:#3e2723; /* Dark Brown */
-    display:flex;
-    flex-direction: column; /* Stacks logo and nav for perfect center */
-    align-items:center;
-    padding:20px 0;
-    border-bottom: 4px solid #b08d57; /* Luxury Gold Border */
+/* --- 3. THE HEADER (FORMAL & CLEAN) --- */
+header {
+    background: var(--white);
+    padding: 20px 8%;
+    display: flex;
+    flex-direction: column; /* Stacks logo and nav in the center */
+    align-items: center;
+    border-bottom: 4px solid var(--accent-gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo img{
-    height:75px;
+.logo img {
+    height: 80px;
     margin-bottom: 15px;
 }
 
-/* NAV */
-nav a{
-    color:#fdfaf5;
-    text-decoration:none;
-    margin: 0 20px;
-    font-size:0.9rem;
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+nav a {
+    color: var(--deep-brown);
+    text-decoration: none;
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    letter-spacing:2px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     transition: 0.3s;
 }
 
-nav a:hover{
-    color: #b08d57; /* Gold on hover */
+nav a:hover {
+    color: var(--accent-gold);
 }
 
-/* HERO SECTION - Eye Catching Title */
-.hero{
-    position:relative;
-    width:100%;
-    height:550px;
-    overflow:hidden;
-    background: #3e2723;
+/* --- 4. HERO SECTION (THE "EYE-CATCHER") --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity: 0.45; /* Dims image to make title pop */
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Dims image for contrast */
 }
 
-.hero-text{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    color:white;
-    text-align:center;
-    width: 90%;
-    z-index:2;
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(61, 43, 31, 0.4); /* Brownish tint overlay */
 }
 
-.hero-text h1{
+.hero-text {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+}
+
+.hero-text h1 {
     font-family: 'Cinzel', serif;
-    font-size: 4.5rem; /* HUGE centered title */
-    margin-bottom:15px;
-    letter-spacing:4px;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    font-size: 4.5rem; /* Massive Scale */
+    color: var(--gold-text) !important; /* FORCED GOLD VISIBILITY */
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.7); /* Deep shadow for readability */
 }
 
-.hero-text p{
+.hero-text p {
     font-family: 'Lora', serif;
-    font-size:1.3rem;
+    font-size: 1.4rem;
     font-style: italic;
-    color: #fdfaf5;
+    color: var(--white);
 }
 
-/* SECTION SPACING */
-section{
-    padding:100px 10%;
+/* --- 5. CENTERED SECTION TITLES --- */
+section {
+    padding: 100px 12%;
 }
 
-/* UNIVERSAL TITLES */
-h1, h2 {
+section h1 {
     font-family: 'Cinzel', serif;
-    color:#3e2723;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 3rem;
+    color: var(--deep-brown);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
 }
 
-/* ABOUT SECTION - Stacked Centered Layout */
-.about{
-    max-width:1200px;
-    margin:auto;
+/* Golden Decorative Line */
+section h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--accent-gold);
+    margin: 15px auto 0;
 }
 
-.about h1{
-    font-size:3rem;
-    margin-bottom:40px;
+/* --- 6. ABOUT SECTION (CLEAN & CENTERED) --- */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
 }
 
-.about-content{
-    display:flex;
-    flex-direction: column; /* Centered Stacking */
-    align-items:center;
-    gap:50px;
+.about-text {
+    max-width: 850px;
+    font-size: 1.2rem;
+    font-family: 'Lora', serif;
 }
 
-.about-text{
-    font-size:1.15rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-images{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
     width: 100%;
 }
 
-.about-images img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-    border: 1px solid #b08d57; /* Gold frame */
-    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+.about-images img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* SERVICES - 2 Column Grid */
-.services h1{
-    font-size:3rem;
-    margin-bottom:60px;
-}
-
-.services-container{
+/* --- 7. SERVICES GRID (THE PERFECT 2-COLUMN) --- */
+.services-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 PICTURES PER ROW */
+    grid-template-columns: repeat(2, 1fr); /* FORCED 2 PER ROW */
     gap: 50px;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.service-card{
-    background:white;
-    width:100%;
-    padding: 30px 20px;
-    border: 1px solid #eee;
-    border-top: 5px solid #b08d57; /* Gold top accent */
-    transition:0.4s ease;
+.service-card {
+    background: var(--white);
+    padding: 40px 20px;
+    border: 1px solid #e0dcd0;
+    border-top: 6px solid var(--accent-gold); /* Formal accent */
+    transition: 0.4s ease;
 }
 
-.service-card:hover{
-    transform:translateY(-15px);
-    box-shadow: 0 25px 50px rgba(62,39,35,0.1);
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 50px rgba(61, 43, 31, 0.15);
 }
 
-.service-card img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
-    margin-bottom: 20px;
+.service-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 25px;
 }
 
-.service-card h2{
+.service-card h2 {
     font-family: 'Cinzel', serif;
-    color:#3e2723;
-    margin-bottom: 15px;
     font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
-/* GALLERY - Artful Grid */
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+/* --- 8. GALLERY (TRADITIONAL GRID) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.gallery-grid img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border: 1px solid #b08d57;
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid var(--accent-gold);
+    transition: 0.3s;
 }
 
-/* CONTACT */
-.contact h1{
-    font-size:3rem;
+.gallery-grid img:hover {
+    filter: brightness(1.1);
 }
 
-/* FOOTER - Bold & Formal */
-footer{
-    background:#3e2723;
-    color:#b08d57; /* Gold Text */
-    text-align:center;
-    padding:80px 20px;
-    margin-top:100px;
-    border-top: 8px solid #b08d57;
+/* --- 9. FOOTER (STRICT & BOLD) --- */
+footer {
+    background: var(--deep-brown);
+    color: var(--accent-gold);
+    padding: 80px 20px;
+    margin-top: 100px;
+    border-top: 8px solid var(--accent-gold);
 }
 
 footer p {
     font-family: 'Cinzel', serif;
-    letter-spacing: 2px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     font-size: 0.9rem;
 }
 
-/* Mobile Fix */
-@media (max-width: 850px) {
+/* RESPONSIVE FIX */
+@media (max-width: 900px) {
     .services-container, .about-images, .gallery-grid {
         grid-template-columns: 1fr;
     }
+    .hero-text h1 { font-size: 2.5rem; }
+    section { padding: 60px 5%; }
 }
