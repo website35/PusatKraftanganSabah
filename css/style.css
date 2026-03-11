@@ -1,5 +1,5 @@
-/* --- 1. FONTS & THEME --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&display=swap');
+/* --- 1. PREMIUM TYPOGRAPHY & THEME --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&display=swap');
 
 /* RESET */
 *{
@@ -55,14 +55,14 @@ nav a:hover{
     width:100%;
     height:550px;
     overflow:hidden;
-    background: #3e2723;
+    background: #000; /* Max contrast for gold text */
 }
 
 .hero img{
     width:100%;
     height:100%;
     object-fit:cover;
-    opacity: 0.45; /* Dims image to make title pop */
+    opacity: 0.45; /* Dims image to make gold title pop */
 }
 
 .hero-text{
@@ -70,18 +70,20 @@ nav a:hover{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    color:white;
     text-align:center;
     width: 90%;
     z-index:2;
 }
 
+/* --- GOLDEN HERO TITLE FIX --- */
 .hero-text h1{
     font-family: 'Cinzel', serif;
-    font-size: 4.5rem; /* HUGE centered title */
+    font-size: 4.5rem; /* Massive centered scale */
+    color: #e5cc7d !important; /* Premium High-Readability Gold */
     margin-bottom:15px;
     letter-spacing:4px;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.7); /* Deep shadow for visibility */
+    text-transform: uppercase;
 }
 
 .hero-text p{
@@ -117,7 +119,7 @@ h1, h2 {
 
 .about-content{
     display:flex;
-    flex-direction: column; /* Centered Stacking */
+    flex-direction: column; 
     align-items:center;
     gap:50px;
 }
@@ -151,7 +153,7 @@ h1, h2 {
 
 .services-container{
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 PICTURES PER ROW */
+    grid-template-columns: 1fr 1fr; /* 2 per row */
     gap: 50px;
     max-width: 1100px;
     margin: 0 auto;
@@ -199,11 +201,6 @@ h1, h2 {
     border: 1px solid #b08d57;
 }
 
-/* CONTACT */
-.contact h1{
-    font-size:3rem;
-}
-
 /* FOOTER - Bold & Formal */
 footer{
     background:#3e2723;
@@ -224,5 +221,8 @@ footer p {
 @media (max-width: 850px) {
     .services-container, .about-images, .gallery-grid {
         grid-template-columns: 1fr;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
     }
 }
