@@ -1,283 +1,232 @@
 /* --- 1. PREMIUM TYPOGRAPHY & THEME --- */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&display=swap');
 
-:root {
-  --deep-brown: #3d2b1f; /* Rich Espresso */
-  --gold-text: #e5cc7d; /* High-Contrast Gold for Title */
-  --accent-gold: #b08d57; /* Muted Gold for Borders */
-  --cream-bg: #fdfaf5; /* Antique Paper Cream */
-  --white: #ffffff;
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* --- 2. GLOBAL RESET & CENTERING --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* BODY - Centered & Earthy */
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#fdfaf5; /* Clean Antique Cream */
+    color:#3e2723;      /* Deep Espresso Brown */
+    line-height:1.9;
+    text-align: center; /* FORCES ALL TEXT TO CENTER */
 }
 
-body {
-  background-color: var(--cream-bg);
-  color: var(--deep-brown);
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.8;
-  text-align: center; /* FORCES ALL CONTENT TO CENTER */
+/* HEADER - Formal Slim Design */
+header{
+    background:#3e2723; /* Dark Brown */
+    display:flex;
+    flex-direction: column; /* Stacks logo and nav for perfect center */
+    align-items:center;
+    padding:20px 0;
+    border-bottom: 4px solid #b08d57; /* Luxury Gold Border */
 }
 
-/* --- 3. THE HEADER (FORMAL & CLEAN) --- */
-header {
-  background: var(--white);
-  padding: 20px 8%;
-  display: flex;
-  flex-direction: column; /* Stacks logo and nav in the center */
-  align-items: center;
-  border-bottom: 4px solid var(--accent-gold);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.logo img{
+    height:75px;
+    margin-bottom: 15px;
 }
 
-.logo img {
-  height: 80px;
-  margin-bottom: 15px;
+/* NAV */
+nav a{
+    color:#fdfaf5;
+    text-decoration:none;
+    margin: 0 20px;
+    font-size:0.9rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing:2px;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
+nav a:hover{
+    color: #b08d57; /* Gold on hover */
 }
 
-nav a {
-  color: var(--deep-brown);
-  text-decoration: none;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: 0.3s;
+/* HERO SECTION - Eye Catching Title */
+.hero{
+    position:relative;
+    width:100%;
+    height:550px;
+    overflow:hidden;
+    background: #3e2723; /* CHANGED: Back to Brown, no more Black */
 }
 
-nav a:hover {
-  color: var(--accent-gold);
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity: 0.45; /* Dims image to make gold title pop */
 }
 
-/* --- 4. HERO SECTION --- */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 550px;
-  /* CHANGE: Switched background from #000 to --deep-brown */
-  background: var(--deep-brown);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    width: 90%;
+    z-index:2;
 }
 
-.hero img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5; /* Dims image for contrast */
+/* --- GOLDEN HERO TITLE FIX --- */
+.hero-text h1{
+    font-family: 'Cinzel', serif;
+    font-size: 4.5rem; /* Massive centered scale */
+    color: #e5cc7d !important; /* Premium High-Readability Gold */
+    margin-bottom:15px;
+    letter-spacing:4px;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.7); /* Deep shadow for visibility */
+    text-transform: uppercase;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(61, 43, 31, 0.4); /* Brownish tint overlay */
+.hero-text p{
+    font-family: 'Lora', serif;
+    font-size:1.3rem;
+    font-style: italic;
+    color: #fdfaf5;
 }
 
-.hero-text {
-  position: relative;
-  z-index: 10;
-  max-width: 900px;
+/* SECTION SPACING */
+section{
+    padding:100px 10%;
 }
 
-.hero-text h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 4.5rem; /* Massive Scale */
-  color: var(--gold-text) !important; /* FORCED GOLD VISIBILITY */
-  letter-spacing: 5px;
-  margin-bottom: 15px;
-  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7); /* Deep shadow for readability */
+/* UNIVERSAL TITLES */
+h1, h2 {
+    font-family: 'Cinzel', serif;
+    color:#3e2723;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.hero-text p {
-  font-family: 'Lora', serif;
-  font-size: 1.4rem;
-  font-style: italic;
-  color: var(--white);
+/* ABOUT SECTION - Balanced & Centered */
+.about{
+    max-width:1200px;
+    margin:auto;
 }
 
-/* --- 5. CENTERED SECTION TITLES --- */
-section {
-  padding: 100px 12%;
+.about h1{
+    font-size:3rem;
+    margin-bottom:40px;
 }
 
-section h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  color: var(--deep-brown);
-  margin-bottom: 50px;
-  position: relative;
-  display: inline-block;
+.about-content{
+    display:flex;
+    flex-direction: column; 
+    align-items:center;
+    gap:50px;
 }
 
-/* Golden Decorative Line */
-section h1::after {
-  content: '';
-  display: block;
-  width: 100px;
-  height: 4px;
-  background: var(--accent-gold);
-  margin: 15px auto 0;
+.about-text{
+    font-size:1.15rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* --- 6. ABOUT SECTION (CLEAN & CENTERED) --- */
-.about-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
+.about-images{
+    display: flex;       /* CHANGED: Flexbox for centering */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
 }
 
-.about-text {
-  max-width: 850px;
-  font-size: 1.2rem;
-  font-family: 'Lora', serif;
+.about-images img{
+    width: calc(50% - 20px); /* 2 per row */
+    min-width: 300px;
+    height:350px;
+    object-fit:cover;
+    border: 1px solid #b08d57; /* Gold frame */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
 
-/* CHANGE: Applied standard grid to center-align two items */
-.about-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  width: 100%;
-  justify-content: center; /* Centers items horizontally */
-  justify-items: center;   /* Centers contents within cells */
-  max-width: 1200px;      /* Restricts overall width for better look */
-  margin: 0 auto;         /* Centers the grid container itself */
+/* SERVICES - Balanced 3-item Grid */
+.services h1{
+    font-size:3rem;
+    margin-bottom:60px;
 }
 
-.about-images img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border: 2px solid var(--accent-gold);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.services-container{
+    display: flex;       /* CHANGED: Flexbox for centering odd items */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* --- 7. SERVICES GRID (THE PERFECT 2-COLUMN) --- */
-/* CHANGE: Adjusted for centering three items by placing two and one below. */
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* FORCED 2 PER ROW */
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: center;
-  justify-items: center;
+.service-card{
+    background:white;
+    width: calc(45% - 25px); /* Ensures 2 per row, centers the 3rd one */
+    min-width: 300px;
+    padding: 30px 20px;
+    border: 1px solid #eee;
+    border-top: 5px solid #b08d57; /* Gold top accent */
+    transition:0.4s ease;
 }
 
-.service-card {
-  background: var(--white);
-  padding: 40px 20px;
-  border: 1px solid #e0dcd0;
-  border-top: 6px solid var(--accent-gold); /* Formal accent */
-  transition: 0.4s ease;
-  width: 100%; /* Ensures standard card width */
+.service-card:hover{
+    transform:translateY(-15px);
+    box-shadow: 0 25px 50px rgba(62,39,35,0.1);
 }
 
-.service-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 50px rgba(61, 43, 31, 0.15);
+.service-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    margin-bottom: 20px;
 }
 
-.service-card img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  margin-bottom: 25px;
+.service-card h2{
+    font-family: 'Cinzel', serif;
+    color:#3e2723;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
-.service-card h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+/* GALLERY - Artful Grid */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-/* NEW: Styles to center the 3rd service card */
-/* Assumes there is a specific class or container for the 3rd card, which isn't defined here. Standard practice for this layout is to either have another 2x2 grid structure or put the third one in a separate centered flex container. Without knowing the HTML, it's hard to target the odd card effectively in this simplified grid structure. If you need it exactly right, please provide the HTML snippet for the services section. Standard procedure for this kind of look in grid is using `grid-column-end: span 2;` for the last item in a specific scenario, but it is not ideal for general responsiveness without full context. The easiest way without HTML changes is to make the Services grid a flexbox container as well. If that is preferred, please confirm. The standard grid approach to placing a single item below two centered items involves setting the grid template and then making the single item span the columns, but for three *identical* size cards with centering, flexbox is cleaner for the *container* while grid is cleaner for the *item* internals. I've left it as a grid but centered the items horizontally. For true centering with an odd number, flex is simpler.
-
-Assuming your current grid places 2 on top and one on the left of the bottom row, I will make the bottom row single-item centered. Again, this is hard without HTML targeting. Providing the HTML is the best path. For now, this CSS makes the overall grid contents centered. If the 3rd card itself needs to be perfectly centered below the other two, this requires HTML modification to group it differently, which I am not doing here. If you provide the HTML, I can show you how. For now, this CSS is as close as possible without structural HTML changes. */
-
-/* Assuming you have a standard layout and want flex, here's a version for flex. If you want grid, the version above is best I can do. 
-
-If you want the flex version for services:
-.services-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
+.gallery-grid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border: 1px solid #b08d57;
 }
 
-.service-card {
-  flex: 0 1 calc(50% - 25px); /* Forces two per row, minus gap */
-/* other .service-card styles ... */
-/* this will put two on top and one centered below by default flex behavior */
-
-For now, I'll stick to the Grid layout in the code above and ensure overall alignment is centered. If you want to switch to flex for an odd number of items, please ask. */
-
-/* --- 8. GALLERY (TRADITIONAL GRID) --- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  justify-content: center;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border: 1px solid var(--accent-gold);
-  transition: 0.3s;
-}
-
-.gallery-grid img:hover {
-  filter: brightness(1.1);
-}
-
-/* --- 9. FOOTER (STRICT & BOLD) --- */
-footer {
-  background: var(--deep-brown);
-  color: var(--accent-gold);
-  padding: 80px 20px;
-  margin-top: 100px;
-  border-top: 8px solid var(--accent-gold);
+/* FOOTER - Bold & Formal */
+footer{
+    background:#3e2723;
+    color:#b08d57; /* Gold Text */
+    text-align:center;
+    padding:80px 20px;
+    margin-top:100px;
+    border-top: 8px solid #b08d57;
 }
 
 footer p {
-  font-family: 'Cinzel', serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.9rem;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
 }
 
-/* RESPONSIVE FIX */
-@media (max-width: 900px) {
-  .services-container, .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-text h1 { font-size: 2.5rem; }
-  section { padding: 60px 5%; }
+/* Mobile Fix */
+@media (max-width: 850px) {
+    .service-card, .about-images img {
+        width: 100%;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
 }
