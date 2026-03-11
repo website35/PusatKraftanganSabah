@@ -1,262 +1,180 @@
-/* RESET */
+/* 1. FONTS & RESET */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500&display=swap');
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-/* BODY */
-
-body{
-font-family:"Times New Roman", serif;
-background:#f5f1ea;
-color:#2b2b2b;
-line-height:1.7;
+body {
+    /* Moving away from default Times New Roman for a more "expensive" feel */
+    font-family: 'Poppins', sans-serif;
+    background: #fdfcfb;
+    color: #333;
+    line-height: 1.8;
 }
 
-
-/* HEADER */
-
-header{
-background:#8b0e2e;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 80px;
+/* 2. HEADER & LOGO (Shrunk to look elegant) */
+header {
+    background: #5d0016; /* Sophisticated deep maroon */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8%; /* Smaller padding = less "huge" space */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* LOGO */
-
-.logo img{
-height:90px;
+.logo img {
+    height: 70px; /* Controlled size so it doesn't push the header too wide */
+    width: auto;
 }
 
-
-/* NAV */
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:35px;
-font-size:18px;
-letter-spacing:1px;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
 }
 
-nav a:hover{
-opacity:0.8;
+nav a:hover {
+    color: #d4af37; /* Gold accent on hover */
 }
 
-
-/* HERO SECTION */
-
-.hero{
-position:relative;
-width:100%;
-height:520px;
-overflow:hidden;
+/* 3. HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 55vh; /* Responsive height */
+    overflow: hidden;
 }
 
-.hero img{
-width:100%;
-height:100%;
-object-fit:cover;
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%); /* Dims image to make text pop */
 }
 
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 90%;
+    z-index: 2;
 }
 
-.hero-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-color:white;
-text-align:center;
-max-width:700px;
-z-index:2;
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
 }
 
-.hero-text h1{
-font-size:56px;
-margin-bottom:20px;
-letter-spacing:1px;
+.hero-text p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
-.hero-text p{
-font-size:22px;
+/* 4. SECTION SPACING (Consistent everywhere) */
+section {
+    padding: 100px 10%;
 }
 
-
-/* SECTION SPACING */
-
-section{
-padding:80px 120px;
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #5d0016;
 }
 
-
-/* ABOUT SECTION */
-
-.about{
-max-width:1200px;
-margin:auto;
+/* 5. ABOUT SECTION (Refined Grid) */
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Gives text slightly more room */
+    gap: 80px; /* Big gap for a "roomy" feel */
+    align-items: center;
 }
 
-.about h1{
-font-size:48px;
-color:#7a0c2e;
-margin-bottom:40px;
+.about-text {
+    font-size: 1.05rem;
+    text-align: left;
 }
 
-.about-content{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:start;
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.about-text{
-font-size:19px;
+.about-images img {
+    width: 100%;
+    height: 250px;
+    border-radius: 4px; /* Slightly sharper corners look more modern */
 }
 
-.about-text p{
-margin-bottom:20px;
+/* 6. SERVICES (The 2-Column Elegant Grid) */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row as requested */
+    gap: 50px;
+    margin-top: 50px;
 }
 
-.about-images{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+.service-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: 0.4s;
+    border: 1px solid #f0f0f0;
 }
 
-.about-images img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:10px;
+.service-card:hover {
+    transform: translateY(-10px);
 }
 
-
-/* SERVICES */
-
-.services{
-text-align:center;
+.service-card img {
+    height: 350px; /* Consistent height for all cards */
 }
 
-.services h1{
-font-size:45px;
-color:#7a0c2e;
-margin-bottom:40px;
+/* 7. GALLERY (Consistent Grid) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.services-container{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
+.gallery-grid img {
+    border-radius: 4px;
 }
 
-.service-card{
-background:white;
-width:300px;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-transition:0.3s;
+/* 8. FOOTER */
+footer {
+    background: #1a1a1a; /* Modern dark grey/black */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 100px;
 }
 
-.service-card:hover{
-transform:translateY(-10px);
+footer p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
 }
 
-.service-card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.service-card h2{
-color:#7a0c2e;
-margin:15px 0;
-}
-
-.service-card p{
-padding:0 20px 20px 20px;
-}
-
-
-/* GALLERY */
-
-.gallery{
-max-width:1200px;
-margin:auto;
-text-align:center;
-}
-
-.gallery h1{
-font-size:45px;
-color:#7a0c2e;
-margin-bottom:20px;
-}
-
-.gallery p{
-max-width:700px;
-margin:auto;
-margin-bottom:40px;
-font-size:18px;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
-
-.gallery-grid img{
-width:100%;
-height:230px;
-object-fit:cover;
-border-radius:10px;
-transition:0.3s;
-}
-
-.gallery-grid img:hover{
-transform:scale(1.05);
-}
-
-
-/* CONTACT */
-
-.contact{
-text-align:center;
-}
-
-.contact h1{
-font-size:45px;
-color:#7a0c2e;
-margin-bottom:30px;
-}
-
-.contact p{
-font-size:18px;
-margin-bottom:10px;
-}
-
-
-/* FOOTER */
-
-footer{
-background:#8b0e2e;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:80px;
+/* MOBILE FIX */
+@media (max-width: 900px) {
+    .about-content, .services-container, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    section { padding: 60px 5%; }
 }
